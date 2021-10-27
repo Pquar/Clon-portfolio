@@ -9,12 +9,13 @@ import {
   Link,
 } from '@material-ui/core';
 import useStyles from '../utils/styles';
-export default function Layout({ children }) {
+export default function Layout({ title, description, children }) {
   const classes = useStyles();
   return (
     <div>
       <Head>
-        <title>This page has a title 🤔</title>
+        <title>{title ? `${title} - Next Amazon` : 'Next Amazona'}</title>
+        {description && <meta name="description" content={description} />}
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
